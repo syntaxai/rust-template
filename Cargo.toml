@@ -1,10 +1,18 @@
 [package]
-name = "hello_world"
+name = "rust-template"
 version = "0.1.0"
 edition = "2024"
+description = "Token-efficient Rust project template with strict clippy lints"
+repository = "https://github.com/syntaxai/rust-template"
+license = "MIT"
 
 [lints.clippy]
-# Minimaliseer boilerplate / overbodige tokens
+# Deny: never allow these
+dbg_macro = "deny"
+todo = "deny"
+redundant_clone = "deny"
+
+# Warn: minimize boilerplate / redundant tokens
 needless_return = "warn"
 needless_borrow = "warn"
 needless_lifetimes = "warn"
@@ -13,7 +21,6 @@ redundant_closure = "warn"
 redundant_closure_for_method_calls = "warn"
 redundant_field_names = "warn"
 redundant_pattern_matching = "warn"
-redundant_clone = "warn"
 redundant_else = "warn"
 let_and_return = "warn"
 collapsible_if = "warn"

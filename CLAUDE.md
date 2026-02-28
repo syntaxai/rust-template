@@ -8,6 +8,7 @@
 - No comments unless logic is non-obvious
 - No doc comments on private items
 - Use short but descriptive variable names
+- Never use `dbg!()` or `todo!()` — they are denied by clippy
 
 ## Crates to prefer (when applicable)
 - `anyhow` for application error handling (instead of custom error types)
@@ -17,6 +18,11 @@
 - `itertools` for complex iterator chains
 
 ## Build & Check
-- `cargo clippy` — uses strict token-minimizing lints (see Cargo.toml)
-- `cargo clippy --fix --allow-dirty --allow-no-vcs` — auto-fix
-- Clippy runs automatically via rust-analyzer on save in Zed
+- `cargo clippy` — strict token-minimizing lints (see Cargo.toml)
+- `cargo clippy --fix --allow-dirty` — auto-fix
+- `cargo fmt` — format code (rustfmt, edition 2024)
+- Clippy + format run automatically on save in Zed
+
+## Toolchain
+- Rust 1.93 (pinned via rust-toolchain.toml)
+- Edition 2024
